@@ -39,8 +39,6 @@ jobs:
           pip install flake8 pytest
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-          # Ensure Python 2.x compatibility issues are not included:
-          flake8 . --ignore=F821,F631 --statistics
       - name: Test with pytest
         run: |
           python -m pytest --cov=iebank_api -v
